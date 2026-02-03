@@ -93,13 +93,12 @@ def processCommand(c):
         "shutdown": lambda: (speak("Thanks Sir, Have a nice time ahead!"), sys.exit())
     }
 
-    # Check if command matches predefined actions
+    # Checking the commad
     for key, action in commands.items():
         if command.startswith(key):
             action()
             return
-
-    # Handle search commands
+
     if command.startswith("google "):
         search(command[7:], "google")
     elif command.startswith("youtube "):
